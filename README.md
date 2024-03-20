@@ -17,31 +17,39 @@ This app allows the users to:
 
 Application's architecture is a Microservices Architecture.
 
-Application's logic is developed using Golang.
-
 Application's FrontEnd developed using React.
 
 Databases used are:
 
-- MongoDB for playlists.
+- MongoDB for playlists and Songs.
 - Redis for auth data.
 - MySQL for user's data.
 
-## Entities
+## Entities & Data Types (in java)
 
 **Auth**
 
-- Email
-- Password
+- Email | String
+- Password | String
 
 **User**
 
-- Email
-- Username
-- List_of_playlists
+- Id | UUID
+- Email | String
+- Username | String
+- List_of_playlists | List<UUID>
 
 **Playlist**
 
-- Name
-- List_of_songs
-- Available_to
+- Id | UUID
+- User_id | UUID
+- Name | String
+- List_of_songs | List<UUID>
+- Available_to | List<UUID>
+
+**Song**
+
+- Id | UUID
+- Name | String
+- Platform | String
+- data (unknown atm)
